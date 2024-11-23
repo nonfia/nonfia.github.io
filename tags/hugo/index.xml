@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hugo on Nonfia’s Blog</title><link>/tags/hugo/</link><description>Recent content in Hugo on Nonfia’s Blog</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>nonfia</copyright><lastBuildDate>Sat, 04 May 2024 00:00:00 +0000</lastBuildDate><atom:link href="/tags/hugo/index.xml" rel="self" type="application/rss+xml"/><item><title>使用 Hugo + Github Pages 搭建个人博客</title><link>/document/toss/41902ba42801a0271bec7f7324d1a05d/</link><pubDate>Sat, 04 May 2024 00:00:00 +0000</pubDate><guid>/document/toss/41902ba42801a0271bec7f7324d1a05d/</guid><description>&lt;img src="https://picsum.photos/seed/41902ba42801a0271bec7f7324d1a05d/800/600.webp" alt="Featured image of post 使用 Hugo + Github Pages 搭建个人博客" />&lt;h2 id="hugo-介绍">Hugo 介绍
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hugo on Nonfia’s Blog</title><link>/tags/hugo/</link><description>Recent content in Hugo on Nonfia’s Blog</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>nonfia</copyright><lastBuildDate>Sat, 04 May 2024 00:00:00 +0000</lastBuildDate><atom:link href="/tags/hugo/index.xml" rel="self" type="application/rss+xml"/><item><title>使用 Hugo + Github Pages 搭建个人博客</title><link>/docs/toss/41902ba42801a0271bec7f7324d1a05d/</link><pubDate>Sat, 04 May 2024 00:00:00 +0000</pubDate><guid>/docs/toss/41902ba42801a0271bec7f7324d1a05d/</guid><description>&lt;img src="https://picsum.photos/seed/41902ba42801a0271bec7f7324d1a05d/800/600.webp" alt="Featured image of post 使用 Hugo + Github Pages 搭建个人博客" />&lt;h2 id="hugo-介绍">Hugo 介绍
 &lt;/h2>&lt;p>Hugo 是一个用 Go 编写的静态站点生成器，可以快速方便的创建自己的博客。&lt;/p>
 &lt;p>Hugo 支持 Markdown 语法，我们可以将自己的文章写成 Markdown 的格式，放在我们用Hugo 创建的博客系统中，从而展示给他人。&lt;/p>
 &lt;p>&lt;a class="link" href="https://gohugo.io/" target="_blank" rel="noopener"
@@ -71,30 +71,30 @@
 &lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="github-自动发布">GitHub 自动发布
 &lt;/h3>&lt;p>登录 GitHub，前往 settings -&amp;gt; Developer Settings -&amp;gt; Personal access tokens，创建 token(classic)&lt;/p>
 &lt;p>token 选择永不过期，并且勾选 repo 和 workflow 选项&lt;/p>
-&lt;p>&lt;img src="/document/toss/41902ba42801a0271bec7f7324d1a05d/image-2.png"
+&lt;p>&lt;img src="/docs/toss/41902ba42801a0271bec7f7324d1a05d/image-2.png"
 width="1456"
 height="760"
-srcset="/document/toss/41902ba42801a0271bec7f7324d1a05d/image-2_hu9ce6e569735b0b345b521bf1d76a0e6d_82834_480x0_resize_box_3.png 480w, /document/toss/41902ba42801a0271bec7f7324d1a05d/image-2_hu9ce6e569735b0b345b521bf1d76a0e6d_82834_1024x0_resize_box_3.png 1024w"
+srcset="/docs/toss/41902ba42801a0271bec7f7324d1a05d/image-2_hu9ce6e569735b0b345b521bf1d76a0e6d_82834_480x0_resize_box_3.png 480w, /docs/toss/41902ba42801a0271bec7f7324d1a05d/image-2_hu9ce6e569735b0b345b521bf1d76a0e6d_82834_1024x0_resize_box_3.png 1024w"
 loading="lazy"
 class="gallery-image"
 data-flex-grow="191"
 data-flex-basis="459px"
 >&lt;/p>
 &lt;p>为保证安全，将生成的 token，保存在 blog.source 仓库的变量中，前往 Settings -&amp;gt; Secrets and variables -&amp;gt; Actions （注意：token只能显示一次，需事先保存）&lt;/p>
-&lt;p>&lt;img src="/document/toss/41902ba42801a0271bec7f7324d1a05d/image-3.png"
+&lt;p>&lt;img src="/docs/toss/41902ba42801a0271bec7f7324d1a05d/image-3.png"
 width="1435"
 height="831"
-srcset="/document/toss/41902ba42801a0271bec7f7324d1a05d/image-3_hu0393c38a3e22510cbd46a06b3e5cd8d0_59698_480x0_resize_box_3.png 480w, /document/toss/41902ba42801a0271bec7f7324d1a05d/image-3_hu0393c38a3e22510cbd46a06b3e5cd8d0_59698_1024x0_resize_box_3.png 1024w"
+srcset="/docs/toss/41902ba42801a0271bec7f7324d1a05d/image-3_hu0393c38a3e22510cbd46a06b3e5cd8d0_59698_480x0_resize_box_3.png 480w, /docs/toss/41902ba42801a0271bec7f7324d1a05d/image-3_hu0393c38a3e22510cbd46a06b3e5cd8d0_59698_1024x0_resize_box_3.png 1024w"
 loading="lazy"
 class="gallery-image"
 data-flex-grow="172"
 data-flex-basis="414px"
 >&lt;/p>
 &lt;p>创建 hugo 工作流文件， 进入 blog.source 仓库，前往 actions -&amp;gt; new workflow，找到 Pages 下的 Hugo，点击 configure 生成工作流文件&lt;/p>
-&lt;p>&lt;img src="/document/toss/41902ba42801a0271bec7f7324d1a05d/image-4.png"
+&lt;p>&lt;img src="/docs/toss/41902ba42801a0271bec7f7324d1a05d/image-4.png"
 width="1219"
 height="524"
-srcset="/document/toss/41902ba42801a0271bec7f7324d1a05d/image-4_hu8a404f54dca226be62cd35788724f8e6_58448_480x0_resize_box_3.png 480w, /document/toss/41902ba42801a0271bec7f7324d1a05d/image-4_hu8a404f54dca226be62cd35788724f8e6_58448_1024x0_resize_box_3.png 1024w"
+srcset="/docs/toss/41902ba42801a0271bec7f7324d1a05d/image-4_hu8a404f54dca226be62cd35788724f8e6_58448_480x0_resize_box_3.png 480w, /docs/toss/41902ba42801a0271bec7f7324d1a05d/image-4_hu8a404f54dca226be62cd35788724f8e6_58448_1024x0_resize_box_3.png 1024w"
 loading="lazy"
 class="gallery-image"
 data-flex-grow="232"
