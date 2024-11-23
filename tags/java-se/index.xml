@@ -346,12 +346,12 @@
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">com.brainy.nonfia.apt.processor.LogProcessor
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">com.brainy.nonfia.apt.processor.GetterProcessor
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">com.brainy.nonfia.apt.processor.SetterProcessor
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>设置编译期间禁止处理 Processor，之所以这样做是因为，如果不禁止 Processor，ServiceLoader 就会去加载刚刚设置的注解处理器，但由于此时处理器本身尚未编译，所以会抛出 class not found 异常。所以我们需要配置 &lt;strong>-proc:none&lt;/strong> 忽略 Processor&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>设置编译期间禁止处理 Processor，之所以这样做是因为，如果不禁止 Processor，&lt;strong>ServiceLoader&lt;/strong> 就会去加载刚刚设置的注解处理器，但由于此时处理器本身尚未编译，所以会抛出 &lt;strong>class not found&lt;/strong> 异常。所以我们需要配置 &lt;strong>-proc:none&lt;/strong> 忽略 Processor&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-xml" data-lang="xml">&lt;span class="line">&lt;span class="cl">&lt;span class="nt">&amp;lt;compilerArgs&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;lt;arg&amp;gt;&lt;/span>-proc:none&lt;span class="nt">&amp;lt;/arg&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nt">&amp;lt;/compilerArgs&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="自动配置">自动配置
-&lt;/h4>&lt;p>@AutoService 是 Google 开源一个组件，它可以自动的帮我们生成 &lt;strong>META-INF/services&lt;/strong> 的文件&lt;/p>
+&lt;/h4>&lt;p>auto-service 是 Google 开源一个组件，它可以自动的帮我们生成 &lt;strong>META-INF/services&lt;/strong> 的文件&lt;/p>
 &lt;p>引入依赖&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-xml" data-lang="xml">&lt;span class="line">&lt;span class="cl">&lt;span class="nt">&amp;lt;dependency&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;lt;groupId&amp;gt;&lt;/span>com.google.auto.service&lt;span class="nt">&amp;lt;/groupId&amp;gt;&lt;/span>
