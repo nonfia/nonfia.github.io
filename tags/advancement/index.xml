@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Advancement on Nonfia’s Blog</title><link>/tags/advancement/</link><description>Recent content in Advancement on Nonfia’s Blog</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>nonfia</copyright><lastBuildDate>Mon, 18 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="/tags/advancement/index.xml" rel="self" type="application/rss+xml"/><item><title>配置文件解析</title><link>/docs/java/springboot/00f493c93a3f4cc188ddebd4d3ea26f2/</link><pubDate>Mon, 18 Nov 2024 00:00:00 +0000</pubDate><guid>/docs/java/springboot/00f493c93a3f4cc188ddebd4d3ea26f2/</guid><description>&lt;img src="https://picsum.photos/seed/00f493c93a3f4cc188ddebd4d3ea26f2/800/600.webp" alt="Featured image of post 配置文件解析" />&lt;h2 id="配置文件解析">配置文件解析
+&lt;/h2>&lt;p>Spring Boot 启动项目会默认加载名为 application 的配置文件，配置文件
+配置文件有两种不同的格式，即 &lt;strong>application.properties&lt;/strong> 和 &lt;strong>application.yml&lt;/strong>， yaml 格式的数据是有序的，properties 格式的数据是无序的&lt;/p>
+&lt;h2 id="配置文件的位置">配置文件的位置
+&lt;/h2>&lt;p>&lt;strong>application.properties&lt;/strong> 和 &lt;strong>application.yml&lt;/strong> 文件可以放在以下四个位置：&lt;/p>
+&lt;ul>
+&lt;li>外置，当前项目根目录下的 config 目录下&lt;/li>
+&lt;li>外置，当前项目的根目录下&lt;/li>
+&lt;li>内置，resources 目录下的 config 目录下&lt;/li>
+&lt;li>内置，resources 目录下&lt;/li>
+&lt;/ul>
+&lt;p>如上顺序，四个配置文件的优先级依次降低&lt;/p>
+&lt;p>此外，如果你在相同优先级位置同时有 &lt;strong>application.properties&lt;/strong> 和 &lt;strong>application.yml&lt;/strong>，那么 &lt;strong>application.properties&lt;/strong> 会覆盖 &lt;strong>application.yml&lt;/strong>。&lt;/p>
+&lt;h2 id="自定义配置文件">自定义配置文件
+&lt;/h2>&lt;h3 id="自定义配置文件名">自定义配置文件名
+&lt;/h3>&lt;p>项目启动时指定配置文件的名字，在项目启动时加载名为 app 的配置文件而不是 application。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">spring.config.name=app
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="自定义配置文件位置">自定义配置文件位置
+&lt;/h3>&lt;p>重新定义配置文件的位置，此参数会覆盖掉默认的四个位置&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">spring.config.location=classpath:/custom-location/
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>在默认的四个位置的基础上，再添加几个位置，新添加位置的优先级大于原本的位置&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">spring.config.additional-location=classpath:/custom-location/
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="自定义属性">自定义属性
+&lt;/h2>&lt;p>&lt;strong>application.properties&lt;/strong> 中添加&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-properties" data-lang="properties">&lt;span class="line">&lt;span class="cl">&lt;span class="na">book.name&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">西游记&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="na">book.author&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">吴承恩&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="na">book.price&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">18&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>各个参数之间也可以直接引用&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-properties" data-lang="properties">&lt;span class="line">&lt;span class="cl">&lt;span class="na">book.name&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">西游记&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="na">book.author&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">吴承恩&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="na">book.price&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">18&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="na">book.desc&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">${book.name}是${book.author}写的&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="普通的属性注入">普通的属性注入
+&lt;/h3>&lt;p>直接通过 &lt;strong>@Value&lt;/strong> 注解注入配置文件的属性&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="line">&lt;span class="cl">&lt;span class="nd">@Value&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;${book.name}&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="kd">private&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">String&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">name&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nd">@Value&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;${book.author}&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="kd">private&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">String&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">author&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nd">@Value&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;${book.price}&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="kd">private&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="kt">int&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">price&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nd">@Value&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;${book.price}&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="kd">private&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">String&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">desc&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>如果不希望把所有配置都放在 &lt;strong>application.properties&lt;/strong> 里面，也可以新定义一个配置文件，例如在 resources 目录下，自定义 book.properties 文件&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-properties" data-lang="properties">&lt;span class="line">&lt;span class="cl">&lt;span class="na">book.name&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">西游记&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="na">book.author&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">吴承恩&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="na">book.price&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">18&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="na">book.desc&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">${book.name}是${book.author}写的&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>此时需要通过 &lt;strong>@PropertySource&lt;/strong> 注解来引入配置&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="line">&lt;span class="cl">&lt;span class="nd">@Component&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nd">@PropertySource&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;classpath:book.properties&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nd">@ConfigurationProperties&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">prefix&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s">&amp;#34;book&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="kd">public&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="kd">class&lt;/span> &lt;span class="nc">Book&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="kd">private&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">String&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">name&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="kd">private&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">String&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">author&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="kd">private&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="kt">int&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">price&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="kd">private&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">String&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">desc&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="类型安全的属性注入">类型安全的属性注入
+&lt;/h3>&lt;p>引入 &lt;strong>@ConfigurationProperties&lt;/strong> 注解，同时配置了属性的前缀 prefix = &amp;ldquo;book&amp;rdquo;，此时会自动将配置文件的属性注入到对象对应的属性中&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="line">&lt;span class="cl">&lt;span class="nd">@Component&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nd">@ConfigurationProperties&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">prefix&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s">&amp;#34;book&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="kd">public&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="kd">class&lt;/span> &lt;span class="nc">Book&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="kd">private&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">String&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">name&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="kd">private&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">String&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">author&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="kd">private&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="kt">int&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">price&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="kd">private&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">String&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">desc&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="多环境配置">多环境配置
+&lt;/h2>&lt;p>在 Spring Boot 中多环境配置文件名需要满足 application-{profile}.properties 的格式，其中 {profile} 对应你的环境标识，比如：&lt;/p>
+&lt;ul>
+&lt;li>application-dev.properties：开发环境&lt;/li>
+&lt;li>application-prod.properties：生产环境&lt;/li>
+&lt;/ul>
+&lt;p>使用对应的环境，只需要在 &lt;strong>application.properties&lt;/strong> 中使用 &lt;strong>spring.profiles.active&lt;/strong> 属性来设置&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-properties" data-lang="properties">&lt;span class="line">&lt;span class="cl">&lt;span class="na">spring.profiles.active&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">dev&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>除却 &lt;strong>spring.profiles.active&lt;/strong> 来激活一个或者多个 Profile 之外，还可以用 &lt;strong>spring.profiles.include&lt;/strong> 来叠加 Profile。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-properties" data-lang="properties">&lt;span class="line">&lt;span class="cl">&lt;span class="na">spring.profiles.include&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">db, redis&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>为了进一步简化为不同环境定义属性的过程，甚至可以将所有属性放在同一个文件中，并使用分隔符来表示 Profile。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-properties" data-lang="properties">&lt;span class="line">&lt;span class="cl">&lt;span class="na">spring.profiles.active&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">dev&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">#---&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="na">spring.config.activate.on-profile&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">dev&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="na">book.name&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">西游记&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="na">book.author&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">吴承恩&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="na">book.price&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">18&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="na">book.desc&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">${book.name}是${book.author}写的&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">#---&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="na">spring.config.activate.on-profile&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">prod&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="na">book.name&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">三国演义&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="na">book.author&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">罗贯中&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="na">book.price&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">18&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="na">book.desc&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">${book.name}是${book.author}写的&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>
