@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spring Boot on Nonfia’s Blog</title><link>/tags/spring-boot/</link><description>Recent content in Spring Boot on Nonfia’s Blog</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>nonfia</copyright><lastBuildDate>Wed, 20 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="/tags/spring-boot/index.xml" rel="self" type="application/rss+xml"/><item><title>Thymeleaf 模板引擎</title><link>/docs/journals/java/springboot/0dca23625fea712bdc66433f3b31eddc/</link><pubDate>Wed, 20 Nov 2024 00:00:00 +0000</pubDate><guid>/docs/journals/java/springboot/0dca23625fea712bdc66433f3b31eddc/</guid><description>&lt;img src="https://picsum.photos/seed/0dca23625fea712bdc66433f3b31eddc/800/600" alt="Featured image of post Thymeleaf 模板引擎" />&lt;h2 id="thymeleaf-介绍">Thymeleaf 介绍
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spring Boot on 闲记时光</title><link>/tags/spring-boot/</link><description>Recent content in Spring Boot on 闲记时光</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>nonfia</copyright><lastBuildDate>Wed, 20 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="/tags/spring-boot/index.xml" rel="self" type="application/rss+xml"/><item><title>Thymeleaf 模板引擎</title><link>/docs/journals/java/springboot/0dca23625fea712bdc66433f3b31eddc/</link><pubDate>Wed, 20 Nov 2024 00:00:00 +0000</pubDate><guid>/docs/journals/java/springboot/0dca23625fea712bdc66433f3b31eddc/</guid><description>&lt;img src="https://picsum.photos/seed/0dca23625fea712bdc66433f3b31eddc/800/600" alt="Featured image of post Thymeleaf 模板引擎" />&lt;h2 id="thymeleaf-介绍">Thymeleaf 介绍
 &lt;/h2>&lt;p>Thymeleaf 是新一代 Java 模板引擎，它类似于 Velocity、FreeMarker 等传统 Java 模板引擎，但是与传统 Java 模板引擎不同的是，Thymeleaf 支持 HTML 原型。&lt;/p>
 &lt;p>它既可以让前端工程师在浏览器中直接打开查看样式，也可以让后端工程师结合真实数据查看显示效果，同时，SpringBoot 提供了 Thymeleaf 自动化配置解决方案，因此在 SpringBoot 中使用 Thymeleaf 非常方便。&lt;/p>
 &lt;p>事实上， Thymeleaf 除了展示基本的 HTML ，进行页面渲染之外，也可以作为一个 HTML 片段进行渲染，例如我们在做邮件发送时，可以使用 Thymeleaf 作为邮件发送模板。&lt;/p>
@@ -146,7 +146,7 @@
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">com.brainy.nonfia.autoconfigure.EventManagementAutoConfiguration
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Spring Boot 3.x 版本后在 &lt;strong>src/main/resources/META-INF/spring&lt;/strong> 目录下创建 &lt;strong>org.springframework.boot.autoconfigure.AutoConfiguration.imports&lt;/strong> 文件，并添加以下配置：&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">com.brainy.nonfia.autoconfigure.EventManagementAutoConfiguration
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>mvn clean install&lt;/strong> 打包并安装到本地Maven仓库， 在新项目引入依赖&lt;/p></description></item><item><title>配置文件解析</title><link>/docs/journals/java/springboot/00f493c93a3f4cc188ddebd4d3ea26f2/</link><pubDate>Mon, 18 Nov 2024 00:00:00 +0000</pubDate><guid>/docs/journals/java/springboot/00f493c93a3f4cc188ddebd4d3ea26f2/</guid><description>&lt;img src="https://picsum.photos/seed/00f493c93a3f4cc188ddebd4d3ea26f2/800/600" alt="Featured image of post 配置文件解析" />&lt;h2 id="配置文件解析">配置文件解析
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>mvn clean install&lt;/strong> 打包并安装到本地Maven仓库， 在新项目引入依赖即可&lt;/p></description></item><item><title>Application 配置文件</title><link>/docs/journals/java/springboot/00f493c93a3f4cc188ddebd4d3ea26f2/</link><pubDate>Mon, 18 Nov 2024 00:00:00 +0000</pubDate><guid>/docs/journals/java/springboot/00f493c93a3f4cc188ddebd4d3ea26f2/</guid><description>&lt;img src="https://picsum.photos/seed/00f493c93a3f4cc188ddebd4d3ea26f2/800/600" alt="Featured image of post Application 配置文件" />&lt;h2 id="配置文件解析">配置文件解析
 &lt;/h2>&lt;p>Spring Boot 启动项目会默认加载名为 application 的配置文件，配置文件
 配置文件有两种不同的格式，即 &lt;strong>application.properties&lt;/strong> 和 &lt;strong>application.yml&lt;/strong>， yaml 格式的数据是有序的，properties 格式的数据是无序的&lt;/p>
 &lt;h2 id="配置文件的位置">配置文件的位置
@@ -250,98 +250,4 @@
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="na">book.author&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">罗贯中&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="na">book.price&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">18&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="na">book.desc&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">${book.name}是${book.author}写的&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Spring Boot 创建</title><link>/docs/journals/java/springboot/688d7a643a955ad2f4c2a669a3bd8abc/</link><pubDate>Sun, 17 Nov 2024 00:00:00 +0000</pubDate><guid>/docs/journals/java/springboot/688d7a643a955ad2f4c2a669a3bd8abc/</guid><description>&lt;img src="https://picsum.photos/seed/688d7a643a955ad2f4c2a669a3bd8abc/800/600" alt="Featured image of post Spring Boot 创建" />&lt;h2 id="spring-boot-介绍">Spring Boot 介绍
-&lt;/h2>&lt;p>Spring Boot是由 Pivotal 团队提供的一套开源框架，可以简化 spring 应用的创建及部署。它提供了丰富的 Spring 模块化支持，可以帮助开发者更轻松快捷地构建出企业级应用。Spring Boot 通过自动配置功能，降低了复杂性，同时支持基于 JVM 的多种开源框架，可以缩短开发时间，使开发更加简单和高效。&lt;/p>
-&lt;p>&lt;a class="link" href="https://spring.io/projects/spring-boot" target="_blank" rel="noopener"
->Spring Boot 官网&lt;/a>&lt;/p>
-&lt;p>&lt;a class="link" href="https://springdoc.cn/spring-boot/index.html" target="_blank" rel="noopener"
->Spring Boot 中文文档&lt;/a>&lt;/p>
-&lt;h2 id="创建方式">创建方式
-&lt;/h2>&lt;h3 id="在线创建">在线创建
-&lt;/h3>&lt;p>打开&lt;a class="link" href="https://start.spring.io" target="_blank" rel="noopener"
->Spring Initializr 官网&lt;/a>&lt;/p>
-&lt;p>&lt;img src="/docs/journals/java/springboot/688d7a643a955ad2f4c2a669a3bd8abc/image-1.png"
-width="1696"
-height="880"
-srcset="/docs/journals/java/springboot/688d7a643a955ad2f4c2a669a3bd8abc/image-1_hu24117a920d90ced0dbc3f0db516b785a_170538_480x0_resize_box_3.png 480w, /docs/journals/java/springboot/688d7a643a955ad2f4c2a669a3bd8abc/image-1_hu24117a920d90ced0dbc3f0db516b785a_170538_1024x0_resize_box_3.png 1024w"
-loading="lazy"
-class="gallery-image"
-data-flex-grow="192"
-data-flex-basis="462px"
->&lt;/p>
-&lt;p>这里要配置的按顺序分别如下：&lt;/p>
-&lt;ul>
-&lt;li>&lt;strong>Project&lt;/strong> : 它定义项目的种类。我们可以创建 Maven 项目或 Gradle 项目。&lt;/li>
-&lt;li>&lt;strong>Language&lt;/strong> : Spring Initializr 提供了三种语言 Java，Kotlin，和 Groovy 的选择。&lt;/li>
-&lt;li>&lt;strong>Spring Boot&lt;/strong> : 可以选择 Spring Boot 版本。&lt;/li>
-&lt;li>&lt;strong>Project Metadata&lt;/strong> : 它包含与项目相关的信息，例如 Group，Artifact 等。&lt;/li>
-&lt;li>&lt;strong>Dependencies&lt;/strong> : 添加到项目中的依赖。&lt;/li>
-&lt;/ul>
-&lt;p>所有的事情全部完成后，点击最下面的 &lt;strong>Generate&lt;/strong>，此时会自动下载项目，将下载下来的项目解压，然后用 IntelliJ IDEA 或者 Eclipse 打开即可进行开发。&lt;/p>
-&lt;h3 id="开发工具创建intellij-idea">开发工具创建（IntelliJ IDEA）
-&lt;/h3>&lt;p>首先在创建项目时选择 Spring boot&lt;/p>
-&lt;p>&lt;img src="/docs/journals/java/springboot/688d7a643a955ad2f4c2a669a3bd8abc/image-2.png"
-width="984"
-height="811"
-srcset="/docs/journals/java/springboot/688d7a643a955ad2f4c2a669a3bd8abc/image-2_hubec0426605ca6d75220be4731e7158d9_67315_480x0_resize_box_3.png 480w, /docs/journals/java/springboot/688d7a643a955ad2f4c2a669a3bd8abc/image-2_hubec0426605ca6d75220be4731e7158d9_67315_1024x0_resize_box_3.png 1024w"
-loading="lazy"
-class="gallery-image"
-data-flex-grow="121"
-data-flex-basis="291px"
->&lt;/p>
-&lt;p>接下来选择需要添加的依赖&lt;/p>
-&lt;p>&lt;img src="/docs/journals/java/springboot/688d7a643a955ad2f4c2a669a3bd8abc/image-3.png"
-width="984"
-height="811"
-srcset="/docs/journals/java/springboot/688d7a643a955ad2f4c2a669a3bd8abc/image-3_hu154a7d61c4a1823ce814cc3859066e9d_50351_480x0_resize_box_3.png 480w, /docs/journals/java/springboot/688d7a643a955ad2f4c2a669a3bd8abc/image-3_hu154a7d61c4a1823ce814cc3859066e9d_50351_1024x0_resize_box_3.png 1024w"
-loading="lazy"
-class="gallery-image"
-data-flex-grow="121"
-data-flex-basis="291px"
->&lt;/p>
-&lt;p>勾选完成后，点击 &lt;strong>创建&lt;/strong> 完成项目的创建。&lt;/p>
-&lt;h2 id="项目结构">项目结构
-&lt;/h2>&lt;p>根据上面的操作已经初始化了一个 Spring Boot 的框架了，项目结构如下：&lt;/p>
-&lt;p>&lt;img src="/docs/journals/java/springboot/688d7a643a955ad2f4c2a669a3bd8abc/image-4.png"
-width="526"
-height="607"
-srcset="/docs/journals/java/springboot/688d7a643a955ad2f4c2a669a3bd8abc/image-4_hu66167ada2e99f473f572e73abe40b8aa_190298_480x0_resize_box_3.png 480w, /docs/journals/java/springboot/688d7a643a955ad2f4c2a669a3bd8abc/image-4_hu66167ada2e99f473f572e73abe40b8aa_190298_1024x0_resize_box_3.png 1024w"
-loading="lazy"
-class="gallery-image"
-data-flex-grow="86"
-data-flex-basis="207px"
->&lt;/p>
-&lt;p>此时项目里面基本没有代码，除了空目录外，还包含如下几样东西。&lt;/p>
-&lt;ul>
-&lt;li>&lt;strong>pom.xml&lt;/strong>：Maven 构建说明文件。&lt;/li>
-&lt;li>&lt;strong>DemoApplication.java&lt;/strong>：一个带有 &lt;strong>main()&lt;/strong> 方法的类，用于启动应用程序。&lt;/li>
-&lt;li>&lt;strong>DemoApplicationTests.java&lt;/strong>：一个空的 Junit 测试类，它加载了一个使用 Spring Boot 字典配置功能的 Spring 应用程序上下文。&lt;/li>
-&lt;li>&lt;strong>application.properties&lt;/strong>：一个空的 properties 文件，你可以根据需要添加配置属性。&lt;/li>
-&lt;/ul>
-&lt;h2 id="运行项目">运行项目
-&lt;/h2>&lt;p>修改 &lt;strong>DemoApplication.java&lt;/strong>&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="line">&lt;span class="cl">&lt;span class="nd">@RestController&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nd">@SpringBootApplication&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="kd">public&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="kd">class&lt;/span> &lt;span class="nc">DemoApplication&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="kd">public&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="kd">static&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="kt">void&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nf">main&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">String&lt;/span>&lt;span class="o">[]&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">args&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="n">SpringApplication&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">run&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">DemoApplication&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">class&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">args&lt;/span>&lt;span class="p">);&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nd">@GetMapping&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;/&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="kd">public&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">String&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nf">hello&lt;/span>&lt;span class="p">()&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="k">return&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s">&amp;#34;Hello World&amp;#34;&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>运行项目，控制台打印如下&lt;/p>
-&lt;p>&lt;img src="/docs/journals/java/springboot/688d7a643a955ad2f4c2a669a3bd8abc/image-5.png"
-width="1235"
-height="503"
-srcset="/docs/journals/java/springboot/688d7a643a955ad2f4c2a669a3bd8abc/image-5_huc2cf186295b4dd24bfe142fc94c0139e_293753_480x0_resize_box_3.png 480w, /docs/journals/java/springboot/688d7a643a955ad2f4c2a669a3bd8abc/image-5_huc2cf186295b4dd24bfe142fc94c0139e_293753_1024x0_resize_box_3.png 1024w"
-loading="lazy"
-class="gallery-image"
-data-flex-grow="245"
-data-flex-basis="589px"
->&lt;/p>
-&lt;p>此时浏览器输入 http://localhost:8080 浏览器会打印 Hello World&lt;/p></description></item></channel></rss>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>
