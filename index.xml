@@ -363,9 +363,9 @@
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="kd">public&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="kd">class&lt;/span> &lt;span class="nc">GetterProcessor&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="kd">extends&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">AbstractAnnotationProcessor&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="测试">测试
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="使用">使用
 &lt;/h2>&lt;p>&lt;strong>mvn clean install&lt;/strong> 打包并安装到本地Maven仓库
-新建一个项目，引入上面项目的依赖，写个测试类，编译后发现，Class 文件自动生成了 getter/setter 方法且引入了日志&lt;/p>
+新建一个项目，引入依赖即可&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="line">&lt;span class="cl">&lt;span class="nd">@Log&lt;/span>&lt;span class="w">
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nd">@Getter&lt;/span>&lt;span class="w">
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nd">@Setter&lt;/span>&lt;span class="w">
@@ -375,15 +375,7 @@
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="kd">private&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="kt">int&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">age&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="w">
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="/docs/journals/java/standard/738504757867b1674d476019f08842fb/image.png"
-width="905"
-height="681"
-srcset="/docs/journals/java/standard/738504757867b1674d476019f08842fb/image_hu6efaebf98c6ab8dfb235807defdcae6f_451382_480x0_resize_box_3.png 480w, /docs/journals/java/standard/738504757867b1674d476019f08842fb/image_hu6efaebf98c6ab8dfb235807defdcae6f_451382_1024x0_resize_box_3.png 1024w"
-loading="lazy"
-class="gallery-image"
-data-flex-grow="132"
-data-flex-basis="318px"
->&lt;/p></description></item><item><title>Thymeleaf 模板引擎</title><link>/docs/journals/java/springboot/0dca23625fea712bdc66433f3b31eddc/</link><pubDate>Wed, 20 Nov 2024 00:00:00 +0000</pubDate><guid>/docs/journals/java/springboot/0dca23625fea712bdc66433f3b31eddc/</guid><description>&lt;img src="https://picsum.photos/seed/0dca23625fea712bdc66433f3b31eddc/800/600" alt="Featured image of post Thymeleaf 模板引擎" />&lt;h2 id="thymeleaf-介绍">Thymeleaf 介绍
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Thymeleaf 模板引擎</title><link>/docs/journals/java/springboot/0dca23625fea712bdc66433f3b31eddc/</link><pubDate>Wed, 20 Nov 2024 00:00:00 +0000</pubDate><guid>/docs/journals/java/springboot/0dca23625fea712bdc66433f3b31eddc/</guid><description>&lt;img src="https://picsum.photos/seed/0dca23625fea712bdc66433f3b31eddc/800/600" alt="Featured image of post Thymeleaf 模板引擎" />&lt;h2 id="thymeleaf-介绍">Thymeleaf 介绍
 &lt;/h2>&lt;p>Thymeleaf 是新一代 Java 模板引擎，它类似于 Velocity、FreeMarker 等传统 Java 模板引擎，但是与传统 Java 模板引擎不同的是，Thymeleaf 支持 HTML 原型。&lt;/p>
 &lt;p>它既可以让前端工程师在浏览器中直接打开查看样式，也可以让后端工程师结合真实数据查看显示效果，同时，SpringBoot 提供了 Thymeleaf 自动化配置解决方案，因此在 SpringBoot 中使用 Thymeleaf 非常方便。&lt;/p>
 &lt;p>事实上， Thymeleaf 除了展示基本的 HTML ，进行页面渲染之外，也可以作为一个 HTML 片段进行渲染，例如我们在做邮件发送时，可以使用 Thymeleaf 作为邮件发送模板。&lt;/p>
