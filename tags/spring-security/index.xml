@@ -469,4 +469,4 @@
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="k">return&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">ResponseEntity&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">ok&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="k">new&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">MessageResponse&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;Admin data&amp;#34;&lt;/span>&lt;span class="p">));&lt;/span>&lt;span class="w">
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>通过以上配置，我们可以构建一个安全可靠的前后端分离应用，既能保证安全性又能提供良好的用户体验&lt;/p></description></item></channel></rss>
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>通过以上配置，我们可以构建一个安全可靠的前后端分离应用，既能保证安全性又能提供良好的用户体验。&lt;/p></description></item></channel></rss>
